@@ -1,0 +1,4 @@
+<select [(ngModel)]="opcionSeleccionado2">
+    <option *ngFor="let plato of productsList" value="{{plato.name}}">{{plato.name}}</option>
+</select>
+<h1>{{opcionSeleccionado2}}</h1>

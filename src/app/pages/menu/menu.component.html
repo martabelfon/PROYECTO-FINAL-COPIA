@@ -1,0 +1,107 @@
+<section class="menuSection" *ngIf="token">
+    <h1 class="menuSection__h1">CREAR MENÚ</h1>
+    <form class="menuForm" [formGroup]="addMenuForm" (ngSubmit)="addMenu()">
+        <div class="menuForm__group field">
+            <input class="menuForm__field" type="text" placeholder="Introduce el nombre del menú"
+                formControlName="name" />
+        </div>
+        <div class="menuDish">
+            <h1 class="menuDish__h1">Primeros</h1>
+            <div class="menuProducts">
+                <ng-template [ngIf]="platosMenu">
+                    <div *ngFor="let product of platosMenu" id="platosprincipales">
+                        <app-menu-product *ngIf="product.tipo ===  'Ensalada' || product.tipo === 'Pasta' || product.tipo === 'Tapa' || product.tipo === 'Legumbres' || product.tipo === 'Verdura' || product.tipo === 'Sopa' || product.tipo === 'Pasta' || product.tipo === 'Arroz'" (emit)="emiter($event)" [plato]="'platosprincipales'" [product]="product">
+                        </app-menu-product>
+                    </div>
+                </ng-template>
+            </div>
+            <h1 class="menuDish__h1">Segundos</h1>
+            <div class="menuProducts">
+                <ng-template [ngIf]="platosMenu">
+                    <div *ngFor="let product of platosMenu" id="platossecundarios">
+                        <app-menu-product *ngIf="product.tipo ===  'Pescado' || product.tipo === 'Carne' || product.tipo === 'Arroz' "(emit)="emiter($event)" [plato]="'platossecundarios'" [product]="product">
+                        </app-menu-product>
+                    </div>
+                </ng-template>
+            </div>
+            <h1 class="menuDish__h1">Postres</h1>
+            <div class="menuProducts">
+                <ng-template [ngIf]="platosMenu">
+                    <div *ngFor="let product of platosMenu" name="postres" id="postres">
+                        <app-menu-product *ngIf="product.tipo === 'Postre'" (emit)="emiter($event)" [plato]="'postres'" [product]="product">
+                        </app-menu-product>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <h2 class="price">PRECIO:</h2><input class="price__input" type="number" formControlName="precio" />
+        <button>CREAR</button>
+    </form>
+</section>
+
+
+
+
+<!-- PARTE MOSTRAR MENU DESDE SERVIDOR -->
+<div class="menuContainer" *ngIf="menu">
+    <div class="menuTitle">
+        <h1 class="menuTitle__h1">MENÚ DEL DÍA:</h1>
+        <h2 class="menuTitle__h2">{{menu.name}}</h2>
+    </div>
+
+    <div class="menuElements">
+
+        <div class="platos">
+            <h2>Primeros</h2>
+            <div class="platoContainer">
+                <div class="platoDetails" *ngFor="let plato of menu.platosprincipales">
+                    <div class="platoImage">
+                        <img class="platoImage__img" src="{{plato.imagen}}" alt="{{plato.name}}">
+                    </div>
+                    <div class="platoDetails__name">
+                        <p>{{plato.name}}</p>
+                    </div>
+                </div>
+            </div>
+            
+
+        <div class="platos">
+            <h2>Segundos</h2>
+            <div class="platoContainer">
+                <div class="platoDetails" *ngFor="let plato of menu.platossecundarios">
+                    <div class="platoImage">
+                        <img class="platoImage__img" src="{{plato.imagen}}" alt="{{plato.name}}">
+                    </div>
+                    <div class="platoDetails__name">
+                        <p>{{plato.name}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="platos">
+            <h2>Postres</h2>
+            <div class="platoContainer">
+                <div class="platoDetails" *ngFor="let plato of menu.postres">
+                    <div class="platoImage">
+                        <img class="platoImage__img" src="{{plato.imagen}}" alt="{{plato.name}}">
+                    </div>
+                    <div class="platoDetails__name">
+                        <p>{{plato.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>Incluye copa de vino, refresco, agua</p>
+        </div>
+        <div *ngIf="menu">
+            <h3>Precio total: {{menu.precio}} €</h3>
+        </div>
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,12 @@
+<div class="ordersPage">
+    <div *ngFor="let order of orders, let index = index" class="orders">
+        <p class="orders__p">MESA >>> {{order.table}}</p>
+        <div *ngFor="let item of order.order" class="orders-item">
+            <p>¿ Es Menú ? {{item.menu ? "SI" : "NO"}}</p>
+            <h3>{{item.product.name}}</h3>
+            <p *ngIf="item.comment">{{item.comment}}</p>
+            <p [ngClass]="item.status ? 'item-done' : 'item-pending'" (click)="updateIndividualOrder(item, index)">{{item.status ? "HECHO" : "PEND."}}</p>
+        </div> 
+        <div [ngClass]="order.status ? 'order-done' : 'order-pending'" (click)="orderToggle(order)"></div>
+    </div>
+</div>

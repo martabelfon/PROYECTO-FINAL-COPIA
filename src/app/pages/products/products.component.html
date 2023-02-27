@@ -1,0 +1,28 @@
+<section class="dishesShowcase">
+  <div class="frame" *ngIf="!filterProducts">
+    <div class="center">
+      <div class="dot-1"></div>
+      <div class="dot-2"></div>
+      <div class="dot-3"></div>
+    </div>
+  </div>
+  
+  <div class="topHero"></div>
+      
+  <h1 class="topHeroTitle">Platos</h1>
+  
+  <div class="showCaseStyle"></div>
+  <div class="containerButtonsDishes">
+    <div class="containerButtonsDishes-center">
+      <button class="buttonsDishes" *ngIf="filterProducts" type="button" (click)="toggle()">TODOS</button>
+      <button class="buttonsDishes" *ngFor="let tipo of tipos" type="button" (click)="toggle(tipo)">{{tipo}}</button>
+    </div>
+  </div>
+  <div class="dishes" *ngIf="filterProducts">
+    <div *ngIf="mostrar" class="dishes__view">
+      <div *ngFor="let product of filterProducts">
+        <app-product  [product]="product"></app-product>
+      </div>
+    </div>
+  </div>
+</section> 

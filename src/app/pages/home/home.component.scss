@@ -1,0 +1,615 @@
+.header{
+    height: 100vh;
+    background-image: url('../../../assets/hero4.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10em;
+
+    .hero{
+        text-align: center;
+        padding: 1em;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2em;
+        margin-top: 20em;
+        
+
+
+        &__h1{
+            color: whitesmoke;
+            font-size: 3em;
+        }
+        &__p{
+            color: rgb(171, 171, 171);
+            margin-bottom: 2em;
+            font-size: 1.2em;
+
+        }
+        
+        
+        &__a{
+            background: linear-gradient(-45deg, #fd9800, #bb4500, #fab040, #ff8800);
+            background-size: 800% 400%;
+            padding: 1em 1em;
+            display: inline-block;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 700;
+            color: white;
+            transition: all .5s ease-in-out;
+            animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 1.2px;
+            width: 50%;
+            margin: auto;
+
+            &:hover{
+                animation: gradient 3s infinite;
+                transform: scale(1.05);
+            }
+            
+            @keyframes gradient {
+                0% {
+                 background-position: 0% 50%;
+                }
+               
+                50% {
+                 background-position: 100% 50%;
+                }
+               
+                100% {
+                 background-position: 0% 50%;
+                }
+               }
+        }
+    }
+    
+}
+
+.presentation{
+    // background-color: #0e1118;
+    background-color: #141821;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 10em;
+
+
+    &__h1{
+        color: whitesmoke;
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    .presentationDishes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: auto;
+        padding-bottom: 5em;
+
+
+        .presentationDish{
+            display: flex;
+            flex-direction: row;
+            width: 30%;
+            gap: 1em;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            transition: all ease 0.5s;
+            cursor: default;
+            border: solid 1px transparent;
+            border-radius: 10px;
+
+            &:hover{
+                background-color: #1f2535;
+                transition: all ease 0.5s;
+                
+            }
+
+            &__img{
+                width: 80px;
+            }
+
+            .presentationContent{
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                
+                &__h4{
+                    color: whitesmoke;
+                }
+                &__p{
+                    color: rgb(171, 171, 171);
+                    width: 90%;
+                }
+            }
+        }
+    }
+    &__a{
+        background: linear-gradient(-45deg, #fd9800, #bb4500, #fab040, #ff8800);
+        background-size: 800% 400%;
+        padding: 1em 1em;
+        display: inline-block;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        transition: all .5s ease-in-out;
+        animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+        cursor: pointer;
+        text-decoration: none;
+        letter-spacing: 1.2px;
+        width: 30%;
+        margin: auto;
+        text-align: center;
+
+        &:hover{
+            animation: gradient 3s infinite;
+            transform: scale(1.05);
+        }
+        @keyframes gradient {
+            0% {
+             background-position: 0% 50%;
+            }
+           
+            50% {
+             background-position: 100% 50%;
+            }
+           
+            100% {
+             background-position: 0% 50%;
+            }
+           }
+    }
+}
+
+
+.restaurantMenu{
+    // background-color: #0e1118;
+    background-color: #141821;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10em;
+    justify-content: flex-end;
+    align-items: center;
+    
+
+    &__content{
+        width: 40%;
+        flex: 1;
+    }
+
+    &__p{
+        color: rgb(171, 171, 171);
+        margin-bottom: 5em;
+
+        &--title{
+            color: rgb(171, 171, 171);
+            font-size: 1.2em;
+        }
+    }
+    &__h1{
+        color: whitesmoke;
+        margin-bottom: 2em;
+        font-size: 2em;
+    }
+
+    &__a{
+        background: linear-gradient(-45deg, #fd9800, #bb4500, #fab040, #ff8800);
+        background-size: 800% 400%;
+        padding: 1em 1em;
+        display: inline-block;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+        transition: all .5s ease-in-out;
+        animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+        cursor: pointer;
+        text-decoration: none;
+        letter-spacing: 1.2px;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+
+        &:hover{
+            animation: gradient 3s infinite;
+            transform: scale(1.05);
+        }
+        @keyframes gradient {
+            0% {
+             background-position: 0% 50%;
+            }
+           
+            50% {
+             background-position: 100% 50%;
+            }
+           
+            100% {
+             background-position: 0% 50%;
+            }
+           }
+    }
+
+    &__img{
+        width: 500px;
+        transform: rotate(180deg);
+    }
+}
+
+.footer{
+    // background-color: #0e1118;
+    background-color: #141821;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 10em;
+    width: 100%;
+    padding-bottom: 5em;
+
+    &__logo{
+        filter: invert(100%);
+        height: 80px;
+    }
+
+    .footerMenu{
+        display: flex;
+        flex-direction: row;
+        width: 30%;
+        justify-content: center;
+        gap: 5em;
+        
+            &__ul{
+                display: flex;
+                flex-direction: column;
+                color: whitesmoke;
+
+            }
+        
+            &__h5{
+                font-size: 1em;
+                margin-bottom: 1em;
+            }
+        
+            &__li{
+                list-style: none;
+            }
+        
+            &__a{
+                text-decoration: none;
+                color: whitesmoke;
+                font-size: 0.8em;
+                transition: 0.5s;
+        
+                &:hover{
+                    color: #fc9a15;
+                    transition: 0.5s;
+                }
+            }
+
+
+    }        
+
+    .footerContact{
+
+
+        &__h5{
+            color: whitesmoke;
+            font-size: 2em;
+        }
+
+        &__iframe{
+            height: 200px;
+            width: 400px;
+        }
+    }
+}
+
+@media screen and (min-width: 950px)  {
+
+    .hero{
+        width: 90%;
+        margin-top: 30em;
+              
+
+
+        &__h1{
+            color: whitesmoke;
+            font-size: 3em;
+        }
+        &__p{
+            color: rgb(171, 171, 171);
+            margin-bottom: 2em;
+            font-size: 1.2em;
+
+        }
+    }
+
+    .restaurantMenu{
+        // background-color: #0e1118;
+        background-color: #141821;
+        display: flex;
+        flex-direction: row;
+        padding-top: 10em;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 7em;   
+
+    &__content{
+        flex: 1;
+        margin-left: 10%;
+    }
+}   
+}
+
+
+@media screen and (min-width: 300px) and (max-width:900px){
+    .header{
+        height: 90vh;
+        padding-bottom: 10em;
+       
+    
+        .hero{
+            width: 90%;
+            margin-top: 30em;
+            
+            
+    
+    
+            &__h1{
+                color: whitesmoke;
+                font-size: 3em;
+            }
+            &__p{
+                color: rgb(171, 171, 171);
+                margin-bottom: 2em;
+                font-size: 1.2em;
+    
+            }
+        }
+    }
+
+    .presentation{
+       
+        padding-top: 10em;
+    
+    
+        &__h1{
+            color: whitesmoke;
+            font-size: 2em;
+            text-align: center;
+            padding-bottom: 2em;
+            width: 90%;
+            margin: auto;
+        }
+    
+        .presentationDishes{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 80%;
+            padding-bottom: 5em;
+            gap: 2em;
+    
+    
+            .presentationDish{
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                gap: 1em;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding-top: 1em;
+                padding-bottom: 1em;
+                transition: all ease 0.5s;
+                cursor: default;
+                border: solid 1px transparent;
+                border-radius: 10px;
+                margin: auto;
+                background-color: #1f2535;
+                
+    
+                &:hover{
+                    background-color: #1f2535;
+                    transition: all ease 0.5s;
+                    
+                }
+    
+                &__img{
+                    width: 80px;
+                }
+    
+                .presentationContent{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+                    text-align: center;
+                    padding: 1em;
+                    align-items: center;
+                    // margin: auto;
+                    
+                    &__h4{
+                        color: whitesmoke;
+                    }
+                    &__p{
+                        color: rgb(171, 171, 171);
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &__a{
+            width: 70%;
+            margin: auto;
+            // background: linear-gradient(-45deg, #fd9800, #bb4500, #fab040, #ff8800);
+            // background-size: 800% 400%;
+            // padding: 1em 1em;
+            // display: inline-block;
+            // border: none;
+            // border-radius: 10px;
+            // font-size: 14px;
+            // font-weight: 700;
+            // color: white;
+            // transition: all .5s ease-in-out;
+            // animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+            // cursor: pointer;
+            // text-decoration: none;
+            // letter-spacing: 1.2px;
+            // text-align: center;
+        }
+    }
+    
+    .restaurantMenu{
+        // background-color: #0e1118;
+        background-color: #141821;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10em;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        
+    
+        &__content{
+            width: 90%;           
+            text-align: center;
+            margin-bottom: 4em;
+
+        }
+    
+        &__p{
+            color: rgb(171, 171, 171);
+            padding-bottom: 5em;
+            width: 90%;
+            margin: auto;
+            
+    
+            &--title{
+                color: rgb(171, 171, 171);
+                font-size: 1.2em;
+            }
+        }
+        &__h1{
+            color: whitesmoke;
+            margin-bottom: 2em;
+            font-size: 2em;
+        }
+
+        &__img{
+            
+            width: 450px;
+        }
+
+        &__a{
+            width: 80%;
+        }
+    }
+
+    .footer{
+        // background-color: #0e1118;
+        background-color: #141821;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 5em;
+        width: 100%;
+        padding-bottom: 5em;
+    
+        &__logo{
+            filter: invert(100%);
+            width: 80px;
+            margin: auto;
+        }
+    
+        .footerMenu{
+            display: flex;
+            flex-direction: row;
+            width: 90%;
+            justify-content: center;
+            gap: 5em;
+            margin: auto;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            
+                &__ul{
+                    display: flex;
+                    flex-direction: column;
+                    color: whitesmoke;
+                    align-items: center;
+    
+                }
+            
+                &__h5{
+                    font-size: 1em;
+                    margin-bottom: 1em;
+                }
+            
+                &__li{
+                    list-style: none;
+                }
+            
+                &__a{
+                    text-decoration: none;
+                    color: whitesmoke;
+                    font-size: 0.8em;
+                    transition: 0.5s;
+            
+                    &:hover{
+                        color: #fc9a15;
+                        transition: 0.5s;
+                    }
+                }
+    
+    
+        }        
+    
+        .footerContact{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            gap: 2em;
+    
+    
+            &__h5{
+                color: whitesmoke;
+                font-size: 2em;
+                text-align: center;
+            }
+    
+            &__iframe{
+                height: 200px;
+                width: 300px;
+                
+            }
+        }
+    }
+    
+
+}

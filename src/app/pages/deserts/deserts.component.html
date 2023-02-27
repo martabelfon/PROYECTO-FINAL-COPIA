@@ -1,0 +1,28 @@
+<div class="frame" *ngIf="!filteredObjects">
+    <div class="center">
+       <div class="dot-1"></div>
+       <div class="dot-2"></div>
+       <div class="dot-3"></div>
+    </div>
+  </div>
+  <section class="dishesShowcase" *ngIf="filteredObjects">
+      <div class="showCaseStyle"></div>
+    <div class="dishes">
+      <div class="dishe" *ngFor="let product of filteredObjects">
+        <img
+          class="dishe__img"
+          src="{{ product.imagen }}"
+          alt="{{ product.name }}"
+          width="100"
+          height="100"
+        />
+        <h1 class="dishe__h1">{{ product.name }}</h1>
+        <p class="dishe__p">
+          Alérgenos:<br />
+          <span *ngFor="let alergeno of product.alergenos">{{ alergeno }}, </span>
+        </p>
+        <p class="dishe__p--price">{{ product.precio }} €</p>
+        <!-- <p class="dishe__p">Descripción: {{product.descripcion}}</p> -->
+      </div>
+    </div>
+  </section>

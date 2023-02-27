@@ -1,0 +1,19 @@
+<div class="modal">
+    <div class="popup">
+        <div class="popupOverlay"></div>
+        <div class="popupContainer">
+            <div class="popupContent">
+                <div class="popupHeader">
+                    <h2 class="popupHeader__h2">{{product.name}}</h2>
+                    <button class="popupHeader__buttonClose" (click)="closePopup()">X</button>
+                </div>
+                <div class="popupDescription">
+                    <img class="popupDescription__img" src="{{product.imagen}}" alt="{{product.imagen}}">
+                    <p class="popupDescription__p--type">{{product.tipo}}</p>
+                    <p class="popupDescription__p">{{product.descripcion}}</p>
+                    <p class="popupDescription__p">{{product.alergenos}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

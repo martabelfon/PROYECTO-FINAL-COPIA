@@ -1,0 +1,105 @@
+<div class="frame" *ngIf="!drinksList">
+    <div class="center">
+       <div class="dot-1"></div>
+       <div class="dot-2"></div>
+       <div class="dot-3"></div>
+    </div>
+  </div>
+  <!-- <section class="drinksShowcase" *ngIf="drinksList">
+      <div class="showCaseStyle"></div>
+    <div class="drinks">
+      <ng-template ngFor let drink [nfForof]="drinksList"></ng-template>
+      <div class="drinks">
+        <div *ngIf="drink.tipo === 'Cerveza'">
+        <img
+          class="dishe__img"
+          src="{{ drinksList.imagen }}"
+          alt="{{ drinksList.name }}"
+          width="100"
+          height="100"
+        />
+        <h1 class="dishe__h1">{{ drinksList.name }}</h1>
+        <p class="dishe__p">
+          Alérgenos:<br />
+          <span *ngFor="let alergeno of drink.alergenos">{{ alergeno }}, </span>
+        </p>
+        <p class="dishe__p--price">{{ drinksList.precio }} €</p>
+        <p class="dishe__p">Descripción: {{drinksList.descripcion}}</p>
+      </div>
+      </div>
+    </div>
+  </section>  -->
+  <!-- <section class="drinksShowcase">
+    <div class="eachDrink" *ngFor="let drink of drinksList">
+      <img 
+      class="eachDrink__img"
+      src="{{drink.imagen}}" 
+      alt="{{drink.name}}"
+      />
+      <div class="drinkDetails">
+        <h1 class="drinkDetails__h1">{{drink.name}}</h1>
+          <div class="alergen" *ngFor="let alergen of drink.alergenos">
+            <img src="../../../assets/iconos/{{alergen.toLowerCase()}}.png" alt={{alergen.toLowerCase()}}>
+          </div>
+      </div>
+      <div class="drinkInfo">
+        <p class="drinkInfo__p">{{drink.precio}}</p>
+        <button class="drinkInfo__button">+ Info</button>
+        <app-pop-up *ngIf="popupOpen" (close)="closePopup()" [product] = "product" ></app-pop-up>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- <section class="dishesShowcase">
+    <div class="frame" *ngIf="!filterProducts">
+      <div class="center">
+        <div class="dot-1"></div>
+        <div class="dot-2"></div>
+        <div class="dot-3"></div>
+      </div>
+    </div>
+    
+    <div class="showCaseStyle"></div>
+    <div class="containerButtonsDishes">
+      <div class="containerButtonsDishes-center">
+        <button class="buttonsDishes" *ngIf="drinksList" type="button" (click)="toggle()">TODOS</button>
+        <button class="buttonsDishes" *ngFor="let tipo of tipos" type="button" (click)="toggle(tipo)">{{tipo}}</button>
+      </div>
+    </div>
+    <div class="dishes" *ngIf="drinksList">
+      <div *ngIf="mostrar" class="dishes__view">
+        <div *ngFor="let product of drinksList">
+          <app-product  [product]="product"></app-product>
+        </div>
+      </div>
+    </div>
+  </section>  -->
+
+  <section class="dishesShowcase">
+    <div class="frame" *ngIf="!drinksList">
+      <div class="center">
+        <div class="dot-1"></div>
+        <div class="dot-2"></div>
+        <div class="dot-3"></div>
+      </div>
+    </div>
+
+    <div class="topHero"></div>
+    
+    <h1 class="topHeroTitle">Bebidas</h1>
+    
+    <div class="showCaseStyle"></div>
+    <div class="containerButtonsDishes">
+      <div class="containerButtonsDishes-center">
+        <button class="buttonsDishes" *ngIf="filterDrinks" type="button" (click)="toggle()">TODOS</button>
+        <button class="buttonsDishes" *ngFor="let tipo of tipos" type="button" (click)="toggle(tipo)">{{tipo}}</button>
+      </div>
+    </div>
+    <div class="dishes" *ngIf="drinksList">
+      <div *ngIf="mostrar" class="dishes__view">
+        <div *ngFor="let product of filterDrinks">
+          <app-product  [product]="product"></app-product>
+        </div>
+      </div>
+    </div>
+  </section> 

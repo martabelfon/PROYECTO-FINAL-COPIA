@@ -1,0 +1,509 @@
+// $ruler: 16px;
+// $color-red: #AE1100;
+// $color-bg: #EBECF0;
+// $color-shadow: #BABECC;
+// $color-white: #FFF;
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+
+.menuSection {
+    background-color: #141821;
+    height: 100%;
+    padding-top: 50px;
+
+
+    &__h1 {
+        padding-top: 2em;
+        text-align: center;
+        width: 100%;
+        color: whitesmoke;
+        letter-spacing: 1.2px;
+        font-size: 2.7em;
+        // background: radial-gradient(#262425, #353230);
+    }
+}
+
+.menuForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+
+    &__group {
+        position: relative;
+        padding: 15px 0 0;
+        margin-top: 10px;
+        width: 50%;
+    }
+
+    &__field {
+        font-family: inherit;
+        width: 100%;
+        border: 0;
+        border-bottom: 2px solid $gray;
+        outline: 0;
+        font-size: 1.3rem;
+        color: $white;
+        padding: 7px 0;
+        background: transparent;
+        text-align: center;
+        transition: border-color 0.2s;
+
+        animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+        cursor: pointer;
+
+        &::placeholder {
+            text-align: center;
+            font-size: 10px;
+            color: $gray;
+        }
+
+        &:placeholder-shown~&__label {
+            font-size: 1.3rem;
+            cursor: text;
+            top: 20px;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: $gray;
+    }
+
+    &__field:focus {
+        ~&__label {
+            position: absolute;
+            //   top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 1rem;
+            color: $primary;
+            font-weight: 700;
+        }
+
+        padding-bottom: 6px;
+        font-weight: 700;
+        border-width: 3px;
+        border-image: linear-gradient(-45deg, #fd9800, #bb4500, #fab040, #ff8800);
+        border-image-slice: 1;
+        border-radius: 10px;
+    }
+
+    /* reset input */
+    &__field {
+
+        &:required,
+        &:invalid {
+            box-shadow: none;
+        }
+    }
+
+
+}
+
+.menuDish {
+    width: 100%;
+    // margin-top: 2em;
+    padding-bottom: 5em;
+    text-align: center;
+
+    &__h1 {
+        margin-top: 2em;
+        color: whitesmoke;
+    }
+
+    .menuProducts {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 2em;
+        align-items: center;
+        justify-content: center;
+
+    }
+}
+
+.menuProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    width: 160px;
+    border-radius: 2em;
+    margin: 15px;
+    background-color: #22201f;
+    box-shadow: 10px 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+
+
+button {
+    margin-top: 2em;
+    margin-bottom: 3em;
+    background: linear-gradient(-45deg, #fd9800, #bb4500, #fab040, #ff8800);
+    background-size: 800% 400%;
+    padding: 1em 2em;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    transition: all .5s ease-in-out;
+    animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+    cursor: pointer;
+}
+
+button:hover {
+    animation: gradient 3s infinite;
+    transform: scale(1.1);
+}
+
+button:active {
+    animation: gradient 3s infinite;
+    transform: scale(0.8);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.price {
+    color: whitesmoke;
+
+    &__input {
+        background: linear-gradient(-20deg, #fd9800, #bb4500, #fab040, #ff8800);
+        color: white;
+        text-align: center;
+        font-size: 17px;
+        border-radius: 10px;
+        margin-top: 2em;
+    }
+
+    &__input:hover {
+        // background: linear-gradient(-45deg, #fd9800, #bb4500, #fab040, #ff8800);
+        background-color: transparent;
+        // padding: 1em 1em;
+        // border: none;
+        // border-radius: 10px;
+        // font-weight: 700;
+        color: white;
+        transition: all .5s ease-in-out;
+        animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+        cursor: pointer;
+
+    }
+}
+
+
+
+.menuContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #141821;
+    height: 100%;
+}
+
+
+.menuTitle {
+    width: 75%;
+    grid-gap: 10px;
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-style: italic;
+    color: whitesmoke;
+}
+
+.menuElements {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.platos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    gap: 2em;
+    color: whitesmoke;
+    text-align: center;
+    flex-wrap: wrap;
+
+
+    .platoContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        gap: 2em;
+        margin: auto;
+        flex-wrap: wrap;
+
+        .platoDetails{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2em;
+            height: 250px;
+            background-color: #1f2535;
+            padding: 1em;
+            border-radius: 2em;
+            width: 30%;
+
+            &__name{
+                color: whitesmoke;
+    
+            }
+        }
+        .platoImage{
+
+            &__img{
+                width: 150px;;
+                border-radius: 5em;
+            }
+        }
+    
+    }
+}
+
+
+@media screen and (min-width: 300px) and (max-width:900px){
+
+    .platos{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2em;
+        color: whitesmoke;
+        text-align: center;
+        flex-wrap: wrap;
+    
+    
+        .platoContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            gap: 2em;
+            margin: auto;
+            flex-wrap: wrap;
+    
+            .platoDetails{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 2em;
+                height: 250px;
+                background-color: #1f2535;
+                padding: 1em;
+                border-radius: 2em;
+                width: 90%;
+    
+                &__name{
+                    color: whitesmoke;
+        
+                }
+            }
+            .platoImage{
+    
+                &__img{
+                    width: 150px;;
+                    border-radius: 5em;
+                }
+            }
+        
+        }
+    }
+
+}
+
+// .plato-container{
+//     width: 75%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding: 30px;
+//     // grid-gap: 10px;
+//     // background-color: green;
+
+//     &-container {
+//         width: 100%;
+//         display: flex;
+//         justify-content: center;
+//         gap: 2em;
+//         // background-color: violet;
+
+
+
+//         &_detail {
+//             display: flex;
+//             height: 200px;
+//             background-color: #1f2535;
+//             align-items: center;
+//             flex-direction: column;
+//             width: 20%;
+//             border-radius: 2em;
+//             box-shadow: 10px 10px 20px -5px rgb(0 0 0 / 75%);
+//             padding: 1em;
+
+//             img {
+//                 border-radius: 40%;
+//                 width: 100px;
+                
+//             }
+
+
+//             p {
+//                 color: whitesmoke;
+//                 text-align: center;
+//             }
+//         }
+
+
+
+
+
+//     }
+
+
+
+// }
+
+
+// .segundosPlato {
+//     width: 75%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding: 30px;
+//     grid-gap: 10px;
+
+//     // background-color: green;
+//     &-container {
+//         width: 100%;
+//         display: flex;
+//         justify-content: space-around;
+//         // background-color: violet;
+
+
+//         &_detail {
+//             display: flex;
+//             height: 200px;
+//             background-color: #1f2535;
+//             align-items: center;
+
+//             flex-direction: column;
+//             width: 20%;
+//             border-radius: 2em;
+//             box-shadow: 10px 10px 20px -5px rgb(0 0 0 / 75%);
+//             padding: 1em;
+
+
+//             img {
+//                 border-radius: 40%;
+//                 width: 100px;
+            
+//             }
+
+
+//             p {
+//                 color: whitesmoke;
+//                 text-align: center;
+//             }
+//         }
+
+
+
+
+
+
+//     }
+
+
+// }
+
+// .postres {
+//     width: 75%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding: 30px;
+//     grid-gap: 10px;
+
+//     // background-color: green;
+//     &-container {
+//         width: 100%;
+//         display: flex;
+//         justify-content: space-around;
+//         // background-color: violet;
+
+
+//         &_detail {
+//             display: flex;
+//             height: 200px;
+//             background-color: #1f2535;
+//             align-items: center;
+
+//             flex-direction: column;
+//             width: 20%;
+//             border-radius: 2em;
+//             box-shadow: 10px 10px 20px -5px rgb(0 0 0 / 75%);
+//             padding: 1em;
+
+//             img {
+//                 border-radius: 40%;
+//                 width: 100px;
+         
+//             }
+
+//             p {
+//                 color: whitesmoke;
+//                 text-align: center;
+//             }
+//         }
+
+
+
+
+
+//     }
+
+
+// }
+
+

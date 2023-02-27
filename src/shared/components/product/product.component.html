@@ -1,0 +1,23 @@
+<div class="eachDish">
+    <img
+      class="eachDish__img"
+      src="{{ product.imagen }}"
+      alt="{{ product.name }}"
+    />
+    <div class="dishDetails">
+        <h1 class="dishDetails__h1">{{ product.name }}</h1>
+          <div class="alergen">
+            <div *ngFor="let alergen of product.alergenos" class="alergen-container">
+                <img class="alergen-container__image" src='../../../assets/iconos/{{alergen.toLowerCase()}}.png' alt={{alergen.toLowerCase()}}/>
+            </div>
+          </div>
+        <div class="dishInfo">
+            <p class="dishInfo__p">{{ product.precio }} €</p>
+            <button (click)="openPopup()" class="">Ver más</button>
+            <app-pop-up *ngIf="popupOpen" (close)="closePopup()" [product] = "product" ></app-pop-up>
+            <button (click)="addIndividualOrder(product)" class="addIndividualOrder" *ngIf="token">+</button>
+        </div>
+    </div>
+  </div>
+
+

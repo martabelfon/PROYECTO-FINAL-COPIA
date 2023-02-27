@@ -1,0 +1,49 @@
+<section class="addProduct">
+  <h1 class="title">CREAR PRODUCTO</h1>
+  
+  <div class="container">
+      <form [formGroup]="addForm" (ngSubmit)="addFormulary()" class="formulary">
+
+
+      <div class="globalContainer">
+        <div class="subContainer">
+          <div class="tag-container">
+            <p class="tag">NOMBRE: </p><input class="input" type="text" formControlName="name"/>
+          </div>
+          <p class="tag">PRECIO: </p><input class="input" type="text" formControlName="precio"/>
+          <p class="tag">DESCRIPCIÓN: </p><input class="input" type="text" formControlName="descripcion"/>
+          <p class="tag">TIPO: </p>
+            <select name="tipo" id="tipo" formControlName="tipo">
+              <option *ngFor="let tipo of tiposGroup" value="{{tipo}}">{{tipo}}</option>
+            </select>
+          <p class="tag">MENÚ: </p>
+            <input type="checkbox" name="menu" id="menu" formControlName="menu">
+          <p class="tag">CARTA: </p>
+            <input type="checkbox" name="menu" id="tipo" formControlName="carta">
+        </div>
+
+        <div class="subContainer"> 
+          <p class="tag">ALERGENOS:</p>
+          <div class="alergen">
+            <div *ngFor="let alergen of alergenGroup" class="alergen-container">
+                <img class="alergen-container__image" src='../../../assets/iconos/{{alergen.toLowerCase()}}.png' alt={{alergen.toLowerCase()}}/>
+                <input type="checkbox" id="{{alergen}}" value="{{alergen}}" (change)="onCheckboxChange($event)" />
+            </div>
+          </div>
+          <div class="tag-container">
+            <p class="tag">ID: </p><input class="input" type="text" formControlName="id"/>
+          </div>
+          <div class="tag-container">
+            <p class="tag">IMAGEN: </p><input class="input" type="text" formControlName="imagen"/>
+          </div>
+         
+        </div>  
+      </div>
+        <button>Crear</button>
+
+
+
+
+      </form>
+    </div>
+</section>

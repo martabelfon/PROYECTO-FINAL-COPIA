@@ -1,0 +1,61 @@
+<!-- LOADING SCREEN -->
+
+<!-- <div class="frame">
+    <div class="center">
+       <div class="dot-1"></div>
+       <div class="dot-2"></div>
+       <div class="dot-3"></div>
+    </div>
+ </div> -->
+
+
+ <!-- BACKUP LOGIN CON NGMODEL -->
+
+ <!-- <div class="login">
+    <form class="custom-form" method="post">
+      <h1>LOGIN</h1>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="Email"
+        required="required"
+      />
+    
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Password"
+        required="required"
+      />
+
+      <button type="submit" (click)="login()">Log in</button>
+    </form>
+  </div> -->
+
+  <div class="login">
+    <form [formGroup]="userForm" class="custom-form" method="post" (ngSubmit)="login()">
+      <h1>INICIA SESIÓN</h1>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required="required"
+        [(ngModel)]="email"
+        formControlName="email"
+      />
+    
+      <input
+        type="password"
+        name="password"
+        placeholder="Contraseña"
+        required="required"
+        [(ngModel)]="password"
+        formControlName="password"
+      />
+
+      <button class="login__button" type="submit">Accede</button>
+      <h3 class="error">{{error}}</h3>
+    </form>
+  </div>

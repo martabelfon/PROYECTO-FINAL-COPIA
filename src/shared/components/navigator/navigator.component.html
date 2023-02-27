@@ -1,0 +1,28 @@
+    <div class="switch" (click)="toggleSidebar()">
+        <input id="checkbox" type="checkbox">
+        <div>
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+            <span class="line-3"></span>
+        </div>
+    </div>
+    <!-- <div class="shoppingCart" (click)="toggleSidebar()" *ngIf="token"> -->
+    <!-- <div class="shoppingCart" *ngIf="token">
+        <div class="shoppingCart-number" *ngIf="carrito"></div>
+        <img src="../../../assets/iconos/shoppingcart.png" alt="Shopping Cart">
+    </div> -->
+
+
+
+<nav class="nav" [ngClass] = "{'active': isActive}"  (click)="toggleSidebar2()">
+    <h1 class="activeLogin" *ngIf="userToShow" (click)="logout()">{{userToShow}}</h1>
+    <a routerLink="/" routerLinkActive="router-link-active"  class="nav__a">Inicio</a>
+    <a routerLink="/menu" class="nav__a">Menú</a>
+    <a routerLink="/products" class="nav__a">Carta</a>
+    <a routerLink="/drinks" class="nav__a">Bebidas</a>
+    <!-- <a routerLink="/deserts" class="nav__a">Postres</a> -->
+    <a routerLink="/orders" *ngIf="userToShow" class="nav__a">Pedidos</a>
+    <a routerLink="/login" class="nav__a">Login & Register</a>
+    <!-- <a (click)="logout()" class="nav__a" *ngIf="userToShow">LogOut</a> -->
+    <a routerLink="/add" class="nav__a" *ngIf="userToShow">Crear Producto</a>
+</nav>

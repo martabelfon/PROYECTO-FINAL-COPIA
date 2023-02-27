@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins';
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+// SCROLLBAR - CUSTOM
+
+::-webkit-scrollbar {width: 4px; background:#252525;}
+/* Track */
+::-webkit-scrollbar-track {background: #f1f1f100;}
+/* Handle */
+::-webkit-scrollbar-thumb {background: rgba(136, 136, 136, 0);}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {background: #fc9a15;}

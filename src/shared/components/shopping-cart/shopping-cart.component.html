@@ -1,0 +1,27 @@
+<div class="shoppingCart__img" *ngIf="token" (click)="toggleShoppingCart()">
+    <div class="shoppingCart__img-number" *ngIf="carrito">{{shoppingCart.length}}</div>
+    <img src="../../../assets/iconos/shoppingcart.png" alt="Shopping Cart">
+</div>
+
+<div class="shoppingCart" [ngClass] = "{'active': !isActive}" *ngIf="token">
+    <!-- <div class="shoppingCart-number" *ngIf="carrito"> -->
+    <div class="shoppingCart__number">
+            <div *ngFor="let item of shoppingCart, let index = index" class="shoppingCart__slide">
+                <form (ngSubmit)="addIndividualOrder(item._id,false,item.menu, item.tipo)">
+                    <ul class="shoppingCart__list">
+                        <li class="shoppingCart__li">
+                            <div class="shoppingCart__item">
+                                <h3 class="shoppingCart__h3">{{item.name}}</h3>
+                                <!-- <input type="text" #comment placeholder="Comentarios"> -->
+                            </div>
+                            <button class="shoppingCart__button" (click)="removeCartItem(index)"><span class="button-textSpin">+</span></button>
+                        </li>
+                    </ul>
+                    <!-- <button type="submit">CREATE</button> -->
+                </form>
+            </div>
+            <button (click)="pedir()" class="pedido">PEDIR</button>
+            <p class="shoppingCart__price">Total: {{globalPrice}} €</p>
+    </div>
+</div>
+

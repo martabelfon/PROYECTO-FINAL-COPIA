@@ -1,0 +1,8 @@
+<div class="menuContainer" [ngClass]="checked ? 'menuContainer__checkeable' : 'menuContainer'" (click)="onCheckboxChange(product)">
+    <label *ngIf="plato"  >
+        <div class="checkbox">
+            <img src="{{product.imagen}}" alt="">
+            <p class="menuContainer__p">{{product.name}}</p>
+        </div>
+    </label>
+</div>

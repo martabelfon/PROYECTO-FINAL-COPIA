@@ -1,0 +1,30 @@
+<div class="register" *ngIf="userToShow">
+    <form class="custom-form" method="post">
+      <h1>REGISTRATE</h1>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="Escribe tu email"
+        required="required"
+      />
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Pon una buena contraseña"
+        required="required"
+      />
+      <input
+        type="password"
+        [(ngModel)]="confirmPassword"
+        name="password"
+        placeholder="Repite tu contraseña"
+        required="required"
+      />
+      <button class="register__button" type="submit" (click)="register()">Regístrate</button>
+      <h3 class="error">{{error}}</h3>
+    </form>
+  </div>
+
+  <!-- <h3 *ngIf="!userToShow">Necesitas estar logueado para Registrarte</h3> -->
